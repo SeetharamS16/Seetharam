@@ -1,0 +1,16 @@
+create database assesement;
+use assesement;
+create table mytable (Roll_no integer not null, Name varchar(20),age integer,gmail varchar(20));
+desc mytable;
+create table sales(Column_ID integer, product_name varchar(20),Price_per_unit float,Qunatity float);
+insert into sales values(1,'Rice',25,4),(2,'Wheat',30,3),(3,'Milk',40,4),(4,'Sugar',35,4);
+select * from sales;
+create view results as select product_name,(Price_per_unit * Qunatity)  AS Total_cost from sales;
+select * from results;
+create table info (id integer,Name varchar(20),age integer);
+insert into info values(1,'Bob',21),(2,'Sam',19),(3,'Jill',18),(4,'Jim',21),(5,'Sally',19),(6,'Jess',20),(7,'Will',21);
+select sum(age) from info;
+select *,count(name) from info group by age;
+create table data (division_id integer, year integer,revenue float);
+insert into data values(1,2018,60),(1,2021,40),(1,2020,70),(2,2021,-10),(3,2018,20),(3,2016,40),(4,2021,50);
+select division_id,year from data where revenue>0;
